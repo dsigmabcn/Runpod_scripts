@@ -11,6 +11,8 @@ git -C /workspace/ComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-Fl
 sleep 1
 git -C /workspace/ComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-DepthAnythingV2.git
 sleep 1
+
+source /workspace/ComfyUI/venv/bin/activate
 #install requirements for each of the repositories
 echo "install requirements of repors"
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
