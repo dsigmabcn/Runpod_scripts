@@ -1,10 +1,10 @@
 #!/bin/bash
 # clonse basic repos
-git -C /workspaceComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-KJNodes.git
-git -C /workspaceComfyUI/custom_nodes clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
-git -C /workspaceComfyUI/custom_nodes clone https://github.com/Fannovel16/comfyui_controlnet_aux.git
-git -C /workspaceComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-Florence2.git
-git -C /workspaceComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-DepthAnythingV2.git
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-KJNodes.git
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/Fannovel16/comfyui_controlnet_aux.git
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-Florence2.git
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-DepthAnythingV2.git
 
 #install requirements for each of the repositories
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
