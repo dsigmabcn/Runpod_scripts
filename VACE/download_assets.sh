@@ -15,4 +15,5 @@ wget -P /workspace/ComfyUI/input https://github.com/dsigmabcn/Runpod_scripts/raw
 wget -P /workspace/ComfyUI/input https://github.com/dsigmabcn/Runpod_scripts/raw/refs/heads/main/VACE/inputs/5580a33d-0aa6-45e5-bc98-b6c46cbfe973.jpeg
 wget -P /workspace/ComfyUI/input https://github.com/dsigmabcn/Runpod_scripts/raw/refs/heads/main/VACE/inputs/5823532-sd_960_540_25fps.mp4
 wget -P /workspace/ComfyUI/input https://github.com/dsigmabcn/Runpod_scripts/raw/refs/heads/main/VACE/inputs/B09TBPKAMM8GFQV725298C3KX0.jfif
+wget -P /workspace/ComfyUI/input https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/VACE/inputs/XTYARK2DADKN4NK8PGAZMSGVN0.jfif
 sleep 1
