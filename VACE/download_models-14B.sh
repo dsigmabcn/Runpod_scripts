@@ -13,7 +13,7 @@ wget -nv -O /workspace/ComfyUI/models/diffusion_models/VACE-Wan2.1-1.3B-Preview.
 sleep 1
 #download WAN VACE model (14B)
 echo "download WAN VACE model 14B"
-wget -nv -O /workspace/ComfyUI/models/diffusion_models/Wan2_1-VACE_module_14B_bf16.safetensors https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_14B_fp16.safetensors
+wget -nv -O /workspace/ComfyUI/models/diffusion_models/wan2.1_vace_14B_fp16.safetensors https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_14B_fp16.safetensors
 sleep 1
 #download CausVis Lora
 echo "download CausVis Lora"
