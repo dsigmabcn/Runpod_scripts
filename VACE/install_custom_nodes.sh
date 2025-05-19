@@ -11,6 +11,8 @@ git -C /workspace/ComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-Fl
 sleep 1
 git -C /workspace/ComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-DepthAnythingV2.git
 sleep 1
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/1038lab/ComfyUI-RMBG.git
+sleep 1
 
 source /workspace/ComfyUI/venv/bin/activate
 #install requirements for each of the repositories
@@ -22,6 +24,8 @@ sleep 1
 pip install -r /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
 sleep 1
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Florence2/requirements.txt
+sleep 1
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthAnythingV2/requirements.txt
 sleep 1
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthAnythingV2/requirements.txt
 sleep 1
