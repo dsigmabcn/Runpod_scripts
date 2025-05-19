@@ -7,8 +7,7 @@ wget -P /workspace/ComfyUI/user/default/workflows/VACE https://raw.githubusercon
 wget -P /workspace/ComfyUI/user/default/workflows/VACE https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/VACE/workflows/14B_versions/Wan_VACE_Control_pose.json
 wget -P /workspace/ComfyUI/user/default/workflows/VACE https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/VACE/workflows/14B_versions/Wan_VACE_reference_1_image.json
 wget -P /workspace/ComfyUI/user/default/workflows/VACE https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/VACE/workflows/14B_versions/Wan_VACE_reference_2_images_composite.json
-sleep 1
-https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/VACE/workflows/14B_versions/Wan_VACE_reference_2_images_concatenate.json
+wget -P /workspace/ComfyUI/user/default/workflows/VACE https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/VACE/workflows/14B_versions/Wan_VACE_reference_2_images_concatenate.json
 sleep 1
 
 
