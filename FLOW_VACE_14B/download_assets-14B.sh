@@ -20,7 +20,8 @@ wget -P /workspace/ComfyUI/input https://github.com/dsigmabcn/Runpod_scripts/raw
 wget -P /workspace/ComfyUI/input https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/FLOW_VACE_14B/inputs/XTYARK2DADKN4NK8PGAZMSGVN0.jfif
 wget -P /workspace/ComfyUI/input https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/FLOW_VACE_14B/inputs/Blue_Truck.jpeg
 wget -P /workspace/ComfyUI/input https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/FLOW_VACE_14B/inputs/desert.jpeg
-wget -P /workspace/ComfyUI/input https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/FLOW_VACE_14B/inputs/PD1452MZ0A5S5CJ3RNREQ06B10.jpeg
+wget -P /workspace/ComfyUI/input https://raw.githubusercontent.com/dsigmabcn/Runpod_scripts/refs/heads/main/FLOW_VACE_14B/inputs/PD1452MZ0A5S5CJ3RNREQ06B10.jfif
 wget -P /workspace/ComfyUI/input https://github.com/dsigmabcn/Runpod_scripts/raw/refs/heads/main/FLOW_VACE_14B/inputs/Base_video_00001.mp4
+sleep 1
 wget -P /workspace/ComfyUI/input https://github.com/dsigmabcn/Runpod_scripts/raw/refs/heads/main/FLOW_VACE_14B/inputs/Tiger_1366_720_24fps.mp4
 sleep 1
