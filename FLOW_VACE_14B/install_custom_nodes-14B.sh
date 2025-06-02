@@ -29,7 +29,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Florence2/requirements.tx
 sleep 1
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthAnythingV2/requirements.txt
 sleep 1
-pip install -r /workspace/ComfyUI/custom_nodes/comfyui-rmbg/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
 sleep 1
 
 
