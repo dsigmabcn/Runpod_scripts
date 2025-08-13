@@ -3,5 +3,5 @@ source ~/.nvm/nvm.sh
 nvm install 22 && nvm use 22
  
 cd /workspace/ai-toolkit/ui
-npm install
+#npm install
 npm run build_and_start

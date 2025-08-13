@@ -15,7 +15,7 @@ sleep 1
 
 source /workspace/ComfyUI/venv/bin/activate
 #install requirements for each of the repositories
-echo "install requirements of repors"
+echo "install requirements of repositories"
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
 sleep 1
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
