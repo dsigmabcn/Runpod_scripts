@@ -67,6 +67,11 @@ pip install triton
 pip install sage-attention
 echo "Finished installing triton and sage-attention"
 
+#installing jupyterlab
+echo "Installing JupyterLab"
+pip install jupyterlab
+echo "Finished installing JupyterLab"
+
 # Clean up the installation scripts.
 echo "Cleaning up..."
 rm install_script.sh run_cpu.sh install-comfyui-venv-linux.sh
@@ -74,4 +79,4 @@ echo "Installation complete!"
 
 # Start the main Runpod service and the ComfyUI service in the background.
 echo "Starting ComfyUI and Runpod services..."
-((cd /workspace && /workspace/run_gpu.sh)  & /start.sh)
+(/workspace/run_gpu.sh & /start.sh)
