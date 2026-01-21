@@ -25,6 +25,7 @@ echo "clone ComfyUI-RunpodDirect"
 git -C /workspace/ComfyUI/custom_nodes clone https://github.com/MadiatorLabs/ComfyUI-RunpodDirect.git
 
 # Installing SAUS nodes.
+echo "clone ComfyUI-SAUS"
 git -C /workspace/ComfyUI/custom_nodes clone https://github.com/dsigmabcn/ComfyUI-SAUS.git
 sleep 1
 
