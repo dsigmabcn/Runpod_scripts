@@ -74,4 +74,4 @@ echo "Installation complete!"
 
 # Start the main Runpod service and the ComfyUI service in the background.
 echo "Starting ComfyUI and Runpod services..."
-(/start.sh & /workspace/run_gpu.sh)
+(/workspace/run_gpu.sh & /start.sh)
