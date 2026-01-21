@@ -5,13 +5,13 @@
 # Includes also ComfyUI-RunpodDirect for better Runpod integration.
 # It is designed to be run in a Runpod RTX 5090 instance.
 
-
+echo "Starting installation of ComfyUI and SAUS..."
 # Change to the /workspace directory to ensure all files are downloaded correctly.
 cd /workspace
 
 # Download and install ComfyUI using the ComfyUI-Manager script.
 echo "Installing ComfyUI and ComfyUI Manager..."
-wget https://github.com/ltdrdata/ComfyUI-Manager/raw/main/scripts/install-comfyui-venv-linux.sh -O install-comfyui-venv-linux.sh
+wget https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/main/scripts/install-comfyui-venv-linux.sh -O install-comfyui-venv-linux.sh
 chmod +x install-comfyui-venv-linux.sh
 ./install-comfyui-venv-linux.sh
 
@@ -25,7 +25,11 @@ echo "clone ComfyUI-RunpodDirect"
 git -C /workspace/ComfyUI/custom_nodes clone https://github.com/MadiatorLabs/ComfyUI-RunpodDirect.git
 
 # Installing SAUS nodes.
+<<<<<<< HEAD
+echo "clone SAUS nodes"
+=======
 echo "clone ComfyUI-SAUS"
+>>>>>>> 544096484f93dfef5b93d1edab11096cc56f89d5
 git -C /workspace/ComfyUI/custom_nodes clone https://github.com/dsigmabcn/ComfyUI-SAUS.git
 sleep 1
 
@@ -43,6 +47,7 @@ git -C /workspace/ComfyUI/custom_nodes clone https://github.com/dsigmabcn/ComfyU
 sleep 1
 git - C /workspace/ComfyUI/custom_nodes clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
 sleep 1
+echo "Finished cloning repos"
 
 #install pip packages for each of the repositories
 source /workspace/ComfyUI/venv/bin/activate
@@ -57,16 +62,19 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
 sleep 1
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_essentials/requirements.txt
 sleep 1
+echo "Finished installing requirements of repos"
 
 
 #install triton and sage attention
+echo "Installing triton and sage-attention"
 pip install triton
 pip install sage-attention
-
+echo "Finished installing triton and sage-attention"
 
 # Clean up the installation scripts.
 echo "Cleaning up..."
 rm install_script.sh run_cpu.sh install-comfyui-venv-linux.sh
+echo "Installation complete!"
 
 # Start the main Runpod service and the ComfyUI service in the background.
 echo "Starting ComfyUI and Runpod services..."
