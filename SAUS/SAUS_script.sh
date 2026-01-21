@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # -- Installation Script ---
-# This script handles the full installation of ComfyUI,
-# and comfyui-model-downloader
+# This script handles the full installation of ComfyUI and SAUS, with the necessary custom nodes
+# Includes also ComfyUI-RunpodDirect for better Runpod integration.
+# It is designed to be run in a Runpod RTX 5090 instance.
+
 
 # Change to the /workspace directory to ensure all files are downloaded correctly.
 cd /workspace
@@ -18,13 +20,48 @@ echo "Configuring ComfyUI for network access..."
 sed -i "$ s/$/ --listen /" /workspace/run_gpu.sh
 chmod +x /workspace/run_gpu.sh
 
-# Installing comfyui-model-downloader nodes.
-echo "clone comfyui-model-downloader"
-git -C /workspace/ComfyUI/custom_nodes clone https://github.com/dsigmabcn/comfyui-model-downloader.git
-
 # Installing ComfyUI-RunpodDirect.
 echo "clone ComfyUI-RunpodDirect"
 git -C /workspace/ComfyUI/custom_nodes clone https://github.com/MadiatorLabs/ComfyUI-RunpodDirect.git
+
+# Installing SAUS nodes.
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/dsigmabcn/ComfyUI-SAUS.git
+sleep 1
+
+# clone basic repos
+echo "clone repos"
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/kijai/ComfyUI-KJNodes.git
+sleep 1
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/Fannovel16/comfyui_controlnet_aux.git
+sleep 1
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/1038lab/ComfyUI-RMBG.git
+sleep 1
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/city96/ComfyUI-GGUF.git
+sleep 1
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/dsigmabcn/ComfyUI_essentials.git
+sleep 1
+git - C /workspace/ComfyUI/custom_nodes clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
+sleep 1
+
+#install pip packages for each of the repositories
+source /workspace/ComfyUI/venv/bin/activate
+echo "install requirements of repos"
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
+sleep 1
+pip install -r /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
+sleep 1
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
+sleep 1
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
+sleep 1
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_essentials/requirements.txt
+sleep 1
+
+
+#install triton and sage attention
+pip install triton
+pip install sage-attention
+
 
 # Clean up the installation scripts.
 echo "Cleaning up..."
