@@ -41,7 +41,7 @@ git -C /workspace/ComfyUI/custom_nodes clone https://github.com/city96/ComfyUI-G
 sleep 1
 git -C /workspace/ComfyUI/custom_nodes clone https://github.com/dsigmabcn/ComfyUI_essentials.git
 sleep 1
-git - C /workspace/ComfyUI/custom_nodes clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
+git -C /workspace/ComfyUI/custom_nodes clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git
 sleep 1
 echo "Finished cloning repos"
 
