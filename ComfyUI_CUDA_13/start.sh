@@ -185,21 +185,38 @@ setup_ssh
 export_env_vars
 
 # Initialize FileBrowser if not already done
+#if [ ! -f "$DB_FILE" ]; then
+#    echo "Initializing FileBrowser..."
+#    filebrowser config init
+#    filebrowser config set --address 0.0.0.0
+#    filebrowser config set --port 8080
+#    filebrowser config set --root /workspace
+#    filebrowser config set --auth.method=json
+#    filebrowser users add admin "${FILEBROWSER_PASSWORD:-adminadmin12}" --perm.admin
+#else
+#    echo "Using existing FileBrowser configuration..."
+#fi
+
+# Start FileBrowser
+#echo "Starting FileBrowser on port 8080..."
+#nohup filebrowser &> /filebrowser.log &
+
+# Initialize FileBrowser if not already done
 if [ ! -f "$DB_FILE" ]; then
-    echo "Initializing FileBrowser..."
-    filebrowser config init
-    filebrowser config set --address 0.0.0.0
-    filebrowser config set --port 8080
-    filebrowser config set --root /workspace
-    filebrowser config set --auth.method=json
-    filebrowser users add admin "${FILEBROWSER_PASSWORD:-adminadmin12}" --perm.admin
+    echo "Initializing FileBrowser at $DB_FILE..."
+    filebrowser config init --database "$DB_FILE"
+    filebrowser config set --database "$DB_FILE" --address 0.0.0.0
+    filebrowser config set --database "$DB_FILE" --port 8080
+    filebrowser config set --database "$DB_FILE" --root /workspace
+    filebrowser config set --database "$DB_FILE" --auth.method=json
+    filebrowser users add admin "${FILEBROWSER_PASSWORD:-adminadmin12}" --perm.admin --database "$DB_FILE"
 else
-    echo "Using existing FileBrowser configuration..."
+    echo "Using existing FileBrowser database at $DB_FILE..."
 fi
 
 # Start FileBrowser
 echo "Starting FileBrowser on port 8080..."
-nohup filebrowser &> /filebrowser.log &
+nohup filebrowser --database "$DB_FILE" > /filebrowser.log &
 
 start_jupyter
 
