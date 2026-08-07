@@ -11,6 +11,15 @@ DB_FILE="/workspace/filebrowser.db"
 PIP_CONSTRAINT_FILE="/op..t/comfyui-runtime-constraints.txt"
 BAKED_NODES=("ComfyUI-Manager" "ComfyUI-KJNodes" "Civicomfy" "ComfyUI-RunpodDirect")
 
+# Remove image default workdir if it exists
+RUNPOD_SLIM_DIR="/workspace/runpod-slim"
+cd /
+if [ -d "$RUNPOD_SLIM_DIR" ]; then
+    echo "Removing unused RunPod slim directory: $RUNPOD_SLIM_DIR"
+    rm -rf "$RUNPOD_SLIM_DIR"
+fi
+
+
 # ---------------------------------------------------------------------------- #
 #                          Function Definitions                                  #
 # ---------------------------------------------------------------------------- #
@@ -91,6 +100,7 @@ export_env_vars() {
 # Start Jupyter Lab server for remote access
 start_jupyter() {
     mkdir -p /workspace
+    
     echo "Starting Jupyter Lab on port 8888..."
     nohup jupyter lab \
         --allow-root \
@@ -100,7 +110,7 @@ start_jupyter() {
         --FileContentsManager.delete_to_trash=False \
         --FileContentsManager.preferred_dir=/workspace \
         --ServerApp.root_dir=/workspace \
-        --ServerApp.terminado_settings='{"shell_command":["/bin/bash"]}' \
+        --ServerApp.terminado_settings='{"shell_command":["/bin/bash","-c","cd /workspace && exec /bin/bash"]}' \
         --IdentityProvider.token="${JUPYTER_PASSWORD:-}" \
         --ServerApp.allow_origin=* &> /jupyter.log &
     echo "Jupyter Lab started"
